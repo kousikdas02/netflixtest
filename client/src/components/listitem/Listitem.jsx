@@ -7,7 +7,7 @@ import {
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
 
 import './listItem.scss'
@@ -15,6 +15,8 @@ import './listItem.scss'
 const Listitem = ({ index, item }) => {
   const [isHovered, setIsHovered] = useState(false)
   const [movie, setMovie] = useState({})
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const getMovie = async () => {
@@ -34,10 +36,13 @@ const Listitem = ({ index, item }) => {
     getMovie()
   }, [item])
 
-  // console.log(movie)
+  const handleClick = (e) => {
+    e.preventDefault()
+    navigate('/watch', { state: { movie } })
+  }
 
   return (
-    <Link to={{ pathname: '/watch', movie: movie }}>
+    <Link to={{ pathname: '/watch' }} onClick={handleClick}>
       <div
         className='listItem'
         style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}

@@ -6,7 +6,7 @@ import './watch.scss'
 const Watch = () => {
   const location = useLocation()
 
-  const movie = location.movie
+  const movie = location.state.movie
   // console.log(location)
   return (
     <div className='watch'>
