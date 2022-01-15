@@ -21,7 +21,7 @@ const Home = ({ type }) => {
           {
             headers: {
               token:
-                'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgwZGUyMzYyOWMwOGFiODY5MWVjNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTgwMDE4MCwiZXhwIjoxNjQyMjMyMTgwfQ.FsKdYJKDvtiKyyIFLWz-OT4Cg1_IzPiZ5Bx4mI6yU7U',
+                'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgwZGUyMzYyOWMwOGFiODY5MWVjNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MjI1MTc2NCwiZXhwIjoxNjQyNjgzNzY0fQ.ksXHC0SWkHl3zMsDyF_IKn1OvisTu42AznftPOXL-Vg',
             },
           }
         )

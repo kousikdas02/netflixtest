@@ -7,7 +7,7 @@ import {
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import './listItem.scss'
@@ -16,7 +16,6 @@ const Listitem = ({ index, item }) => {
   const [isHovered, setIsHovered] = useState(false)
   const [movie, setMovie] = useState({})
   const navigate = useNavigate()
-  const location = useLocation()
 
   useEffect(() => {
     const getMovie = async () => {
@@ -24,7 +23,7 @@ const Listitem = ({ index, item }) => {
         const res = await axios.get('/movies/find/' + item, {
           headers: {
             token:
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgwZGUyMzYyOWMwOGFiODY5MWVjNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTgxMjUyMywiZXhwIjoxNjQyMjQ0NTIzfQ.Eevg8RX0VIBr5AeNhfaurthW9Lv4GP540P9ZI3q8e9c',
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgwZGUyMzYyOWMwOGFiODY5MWVjNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MjI1MTc2NCwiZXhwIjoxNjQyNjgzNzY0fQ.ksXHC0SWkHl3zMsDyF_IKn1OvisTu42AznftPOXL-Vg',
           },
         })
         setMovie(res.data)
@@ -61,7 +60,7 @@ const Listitem = ({ index, item }) => {
                 <ThumbDownOutlined className='icon' />
               </div>
               <div className='itemInfoTop'>
-                <span>{movie.duration}</span>
+                <span className='duration'>{movie.duration}</span>
                 <span className='ageLimit'>+{movie.limit}</span>
                 <span>{movie.year}</span>
               </div>

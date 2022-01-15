@@ -11,15 +11,19 @@ import {
 import UserList from './pages/userList/UserList'
 import User from './pages/user/User'
 import NewUser from './pages/newUser/NewUser'
-import ProductList from './pages/productList/ProductList'
-import Product from './pages/product/Product'
-import NewProduct from './pages/newProduct/NewProduct'
+import MovieList from './pages/movieList/MovieList'
+import Movie from './pages/movie/Movie'
+import NewMovie from './pages/newMovie/NewMovie'
 import Login from './pages/login/Login'
 import { AuthContext } from './context/authContext/AuthContext'
 import { useContext } from 'react'
+import ListList from './pages/listList/ListList'
+import List from './pages/list/List'
+import NewList from './pages/newList/NewList'
 
 function App() {
   const { user } = useContext(AuthContext)
+
   return (
     <Router>
       <Switch>
@@ -43,13 +47,22 @@ function App() {
                 <NewUser />
               </Route>
               <Route path='/movies'>
-                <ProductList />
+                <MovieList />
               </Route>
-              <Route path='/product/:productId'>
-                <Product />
+              <Route path='/movie/:movieId'>
+                <Movie />
               </Route>
-              <Route path='/newproduct'>
-                <NewProduct />
+              <Route path='/newmovie'>
+                <NewMovie />
+              </Route>
+              <Route path='/lists'>
+                <ListList />
+              </Route>
+              <Route path='/list/:listId'>
+                <List />
+              </Route>
+              <Route path='/newlist'>
+                <NewList />
               </Route>
             </div>
           </>

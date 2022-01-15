@@ -14,7 +14,7 @@ const Featured = ({ type }) => {
         const res = await axios.get(`/movies/random?type=${type}`, {
           headers: {
             token:
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgwZGUyMzYyOWMwOGFiODY5MWVjNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTgxMjUyMywiZXhwIjoxNjQyMjQ0NTIzfQ.Eevg8RX0VIBr5AeNhfaurthW9Lv4GP540P9ZI3q8e9c',
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDgwZGUyMzYyOWMwOGFiODY5MWVjNyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MjI1MTc2NCwiZXhwIjoxNjQyNjgzNzY0fQ.ksXHC0SWkHl3zMsDyF_IKn1OvisTu42AznftPOXL-Vg',
           },
         })
         setContent(res.data[0])
@@ -29,7 +29,7 @@ const Featured = ({ type }) => {
     <div className='featured'>
       {type && (
         <div className='category'>
-          <span>{type === 'movies' ? 'Movies' : 'Series'}</span>
+          <span>{type === 'movie' ? 'Movies' : 'Series'}</span>
           <select name='genre' id='genre'>
             <option>Genre</option>
             <option value='adventure'>Adventure</option>
@@ -50,7 +50,8 @@ const Featured = ({ type }) => {
       )}
       <img src={content.img} alt='' />
       <div className='info'>
-        <img src={content.imgTitle} alt='' />
+        <span className='main-title'>{content.title}</span>
+        {/* <img src={content.imgTitle} alt='' /> */}
         <span className='desc'>{content.desc}</span>
         <div className='buttons'>
           <button className='play'>

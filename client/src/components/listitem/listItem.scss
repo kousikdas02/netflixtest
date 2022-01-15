@@ -23,7 +23,7 @@
   }
 
   &:hover {
-    width: 325px;
+    width: 300px;
     height: 300px;
     position: absolute;
     top: -150px;
@@ -77,6 +77,9 @@
         font-size: 14px;
         color: lightgray;
         text-transform: capitalize;
+      }
+      .duration {
+        margin-right: 10px;
       }
     }
   }
