@@ -26,6 +26,7 @@ function App() {
 
   return (
     <Router>
+      {!user && <Redirect to='/login' />}
       <Switch>
         <Route path='/login'>{user ? <Redirect to='/' /> : <Login />}</Route>
         {user && (

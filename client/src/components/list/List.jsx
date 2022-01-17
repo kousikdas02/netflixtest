@@ -11,7 +11,6 @@ const List = ({ list }) => {
   const [isMoved, setIsMoved] = useState(false)
   const [slideNumber, setSlideNumber] = useState(0)
   const [clickLimit, setClickLimit] = useState(window.innerWidth / 230)
-
   const listRef = useRef()
 
   const handleClick = (direction) => {
@@ -21,7 +20,7 @@ const List = ({ list }) => {
       setSlideNumber(slideNumber - 1)
       listRef.current.style.transform = `translateX(${230 + distance}px)`
     }
-    if (direction === 'right' && slideNumber < 10 - clickLimit) {
+    if (direction === 'right' && slideNumber < Listitem.length) {
       setSlideNumber(slideNumber + 1)
       listRef.current.style.transform = `translateX(${-230 + distance}px)`
     }
@@ -37,7 +36,7 @@ const List = ({ list }) => {
         />
         <div className='container' ref={listRef}>
           {list.content.map((item, i) => (
-            <Listitem index={i} item={item} />
+            <Listitem key={i} index={i} item={item} />
           ))}
         </div>
         <ArrowForwardIosOutlined

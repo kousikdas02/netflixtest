@@ -41,3 +41,14 @@ export const deleteMoviesSuccess = (id) => ({
 export const deleteMoviesFailure = () => ({
   type: 'DELETE_MOVIES_FAILURE',
 })
+
+export const updateMoviesStart = () => ({
+  type: 'UPDATE_MOVIES_START',
+})
+export const updateMoviesSuccess = (movie) => ({
+  type: 'UPDATE_MOVIES_SUCCESS',
+  payload: movie,
+})
+export const updateMoviesFailure = () => ({
+  type: 'UPDATE_MOVIES_FAILURE',
+})
